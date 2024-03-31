@@ -1,7 +1,8 @@
 #include "win.h"
 #include "ui_win.h"
+#include <QBoxLayout>
+#include <QMessageBox>
 
-#include "win.h"
 Win::Win(QWidget *parent):QWidget(parent)
 {
     codec = QTextCodec::codecForName("Windows-1251");

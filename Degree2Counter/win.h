@@ -1,6 +1,10 @@
 #ifndef win_h
 #define win_h
 #include <QtGui>
+#include <QFrame>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
 
 class Win:public QWidget // класс окна
 {

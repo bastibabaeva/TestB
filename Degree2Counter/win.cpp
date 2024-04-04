@@ -8,8 +8,8 @@ Win::Win(QWidget *parent):QWidget(parent)
     codec = QTextCodec::codecForName("UTF-8");
     setWindowTitle(codec->toUnicode("Возведение в квадрат"));
     frame = new QFrame(this);
-    frame->setFrameShadow(QFrame::Raised);
-    frame->setFrameShape(QFrame::Panel);
+    //frame->setFrameShadow(QFrame::Raised);
+    //frame->setFrameShape(QFrame::Panel);
     inputLabel = new QLabel(codec->toUnicode("Введите число:"),  this);
     inputEdit = new QLineEdit("",this);
 

@@ -5,7 +5,7 @@
 
 Win::Win(QWidget *parent):QWidget(parent)
 {
-    codec = QTextCodec::codecForName("KOI8_R");
+    //codec = QTextCodec::codecForName("KOI8_R");
     setWindowTitle(codec->toUnicode("Возведение в квадрат"));
     frame = new QFrame(this);
     frame->setFrameShadow(QFrame::Raised);

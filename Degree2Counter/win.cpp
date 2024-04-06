@@ -10,7 +10,7 @@ Win::Win(QWidget *parent):QWidget(parent)
     frame = new QFrame(this);
     frame->setFrameShadow(QFrame::Raised);
     frame->setFrameShape(QFrame::Panel);
-    inputLabel = new QLabel(codec->toUnicode("Введите число:"),  this);
+    inputLabel = new QLabel(codec->toUnicode("Введите число:"), this);
     inputEdit = new QLineEdit("",this);
 
     StrValidator *v=new StrValidator(inputEdit);
@@ -26,12 +26,12 @@ Win::Win(QWidget *parent):QWidget(parent)
     vLayout1->addWidget(inputEdit);
     vLayout1->addWidget(outputLabel);
     vLayout1->addWidget(outputEdit);
-    vLayout1->addStretch();
+    //vLayout1->addStretch();
 
     QVBoxLayout *vLayout2 = new QVBoxLayout();
     vLayout2->addWidget(nextButton);
     vLayout2->addWidget(exitButton);
-    vLayout2->addStretch();
+    //vLayout2->addStretch();
 
     QHBoxLayout *hLayout = new QHBoxLayout(this);
     hLayout->addWidget(frame);

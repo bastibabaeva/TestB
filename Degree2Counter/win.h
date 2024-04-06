@@ -31,9 +31,6 @@ public:
     StrValidator(QObject *parent):QValidator(parent){}
     virtual State validate(QString &str,int &pos)const
     {
-        QMessageBox msgBox(QMessageBox::Information, codec->toUnicode("Возведение в квадрат."),
-            codec->toUnicode("Введено неверное значение."));
-        msgBox.exec();
         return Acceptable; // метод всегда принимает вводимую строку
     }
 };

@@ -26,12 +26,12 @@ Win::Win(QWidget *parent):QWidget(parent)
     vLayout1->addWidget(inputEdit);
     vLayout1->addWidget(outputLabel);
     vLayout1->addWidget(outputEdit);
-    //vLayout1->addStretch();
+    vLayout1->addStretch();
 
     QVBoxLayout *vLayout2 = new QVBoxLayout();
     vLayout2->addWidget(nextButton);
     vLayout2->addWidget(exitButton);
-    //vLayout2->addStretch();
+    vLayout2->addStretch();
 
     QHBoxLayout *hLayout = new QHBoxLayout(this);
     hLayout->addWidget(frame);
@@ -73,7 +73,7 @@ void Win::calc()
     else
         if (!str.isEmpty())
         {
-            QMessageBox msgBox(QMessageBox::Information,
+            QMessageBox msgBox(QMessageBox::Warning,
                                codec->toUnicode("Возведение в квадрат."),
                                codec->toUnicode("Введено неверное значение."),
                                QMessageBox::Ok);

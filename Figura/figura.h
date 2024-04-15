@@ -1,21 +1,31 @@
 #ifndef FIGURA_H
 #define FIGURA_H
+#include <QtGui>
 
-#include <QMainWindow>
-
-QT_BEGIN_NAMESPACE
-namespace Ui { class figura; }
-QT_END_NAMESPACE
-
-class figura : public QMainWindow
+class Figura:
 {
     Q_OBJECT
-
+protected:
+    int x,y,halflen, dx, dy,r;
+    virtual void draw(QPainter *Painter)=0;
 public:
-    figura(QWidget *parent = nullptr);
-    ~figura();
+    Figura(int X, int Y, int Halflen): x(X), y(Y), halflen(Halflen){}
+    void move(float alpha, QPainter *Painter);
+};
 
-private:
-    Ui::figura *ui;
+class MyLine: public Figura
+{
+protected:
+    void draw(QPointer *Pointer);
+public:
+    MyLine(int x, int y, int halflen): Figura(x,y,halflen){}
+};
+
+class MyRect: public Figura
+{
+protected:
+    void draw(QPointer *Pointer);
+public:
+    MyRect(int x, int y, int halflen): Figura(x,y,halflen);
 };
 #endif // FIGURA_H

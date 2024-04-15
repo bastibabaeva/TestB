@@ -1,15 +1,21 @@
 #include "figura.h"
-#include "ui_figura.h"
+#include <math.h>
 
-figura::figura(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::figura)
+void Figura::move(float alpha, QPointer *Pointer)
 {
-    ui->setupUi(this);
+    dx=cos(alpha)*halflen;
+    dy=sin(alpha)*halflen;
+    draw(Pointer);
 }
 
-figura::~figura()
+void MyLine::draw(QPainter *Painter)
 {
-    delete ui;
+    Painter->drawLine(x+dx,y+dy,x-dx,y-dy);
 }
-
+void MyRect::draw(QPointer *Painter)
+{
+    Painter->drawLine(x+dx,y+dy,x+dy,y-dx);
+    Painter->drawLine(x-dx,y-dy,x-dy,y+dx);
+    Painter->drawLine(x+dy,y-dx,x-dx,y-dy);
+    Painter->drawLine(x-dy,y+dx,x+dx,y+dy);
+}

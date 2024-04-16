@@ -26,6 +26,6 @@ class MyRect: public Figura
 protected:
     void draw(QPointer *Pointer);
 public:
-    MyRect(int x, int y, int halflen): Figura(x,y,halflen);
+    MyRect(int x, int y, int halflen): Figura(x,y,halflen){}
 };
 #endif // FIGURA_H

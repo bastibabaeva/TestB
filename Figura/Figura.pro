@@ -13,6 +13,7 @@ SOURCES += \
     figura.cpp
 
 HEADERS += \
+    area.h \
     figura.h
 
 FORMS += \

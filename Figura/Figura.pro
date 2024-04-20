@@ -11,11 +11,13 @@ CONFIG += c++17
 SOURCES += \
     area.cpp \
     main.cpp \
-    figura.cpp
+    figura.cpp \
+    window.cpp
 
 HEADERS += \
     area.h \
-    figura.h
+    figura.h \
+    windiw.h
 
 FORMS += \
     figura.ui

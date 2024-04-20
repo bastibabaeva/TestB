@@ -6,6 +6,7 @@
 #include <QLineEdit>
 #include <QPushButton>
 #include <QMessageBox>
+#include <QtDebug>
 
 class Win:public QWidget // класс окна
 {
@@ -31,6 +32,7 @@ public:
     StrValidator(QObject *parent):QValidator(parent){}
     virtual State validate(QString &str,int &pos)const
     {
+        qDebug()<<str<<endl;
         return Acceptable; // метод всегда принимает вводимую строку
     }
 };

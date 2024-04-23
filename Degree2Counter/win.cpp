@@ -11,8 +11,8 @@ Win::Win(QWidget *parent):QWidget(parent)
     frame->setFrameShadow(QFrame::Raised);
     frame->setFrameShape(QFrame::Panel);
     inputLabel = new QLabel(codec->toUnicode("Введите число:"), this);
-    //inputEdit = new QLineEdit("",this);
-    inputEdit=nullptr;
+    inputEdit = new QLineEdit("",this);
+    //inputEdit=nullptr;
 
     StrValidator *v=new StrValidator(inputEdit);
     inputEdit->setValidator(v);
@@ -22,7 +22,7 @@ Win::Win(QWidget *parent):QWidget(parent)
     exitButton = new QPushButton(codec->toUnicode("Выход"), this);
     // компоновка приложения выполняется согласно рисунку 2
 
-    if(outputLabel!=nullptr){
+    //if(outputLabel!=nullptr){
 
 
     QVBoxLayout *vLayout1 = new QVBoxLayout(frame);
@@ -45,7 +45,7 @@ Win::Win(QWidget *parent):QWidget(parent)
     connect(exitButton,SIGNAL(clicked(bool)), this,SLOT(close()));
     connect(nextButton,SIGNAL(clicked(bool)), this,SLOT(begin()));
     connect(inputEdit,SIGNAL(returnPressed()), this,SLOT(calc()));
-    }
+    //}
 }
 void Win::begin()
 {

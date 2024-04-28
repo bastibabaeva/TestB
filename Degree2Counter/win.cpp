@@ -6,20 +6,20 @@
 Win::Win(QWidget *parent):QWidget(parent)
 {
     //codec = QTextCodec::codecForName("KOI8_R");
-    setWindowTitle(codec->toUnicode("Возведение в квадрат"));
+    setWindowTitle("Возведение в квадрат");
     frame = new QFrame(this);
     frame->setFrameShadow(QFrame::Raised);
     frame->setFrameShape(QFrame::Panel);
-    inputLabel = new QLabel(codec->toUnicode("Введите число:"), this);
+    inputLabel = new QLabel("Введите число:", this);
     inputEdit = new QLineEdit("",this);
     //inputEdit=nullptr;
 
     StrValidator *v=new StrValidator(inputEdit);
     inputEdit->setValidator(v);
-    outputLabel = new QLabel(codec->toUnicode("Результат:"), this);
+    outputLabel = new QLabel("Результат:", this);
     outputEdit = new QLineEdit("",this);
-    nextButton = new QPushButton(codec->toUnicode("Следующее"), this);
-    exitButton = new QPushButton(codec->toUnicode("Выход"), this);
+    nextButton = new QPushButton("Следующее", this);
+    exitButton = new QPushButton("Выход", this);
     // компоновка приложения выполняется согласно рисунку 2
 
     //if(outputLabel!=nullptr){
@@ -69,8 +69,8 @@ void Win::calc()
         r=a*a;
         if (!qIsFinite(r)){
             QMessageBox msgBox(QMessageBox::Warning,
-                               codec->toUnicode("Возведение в квадрат."),
-                               codec->toUnicode("Введено неверное значение."),
+                               ("Возведение в квадрат."),
+                               ("Введено неверное значение."),
                                QMessageBox::Ok);
             msgBox.exec();
             inputEdit->clear();
@@ -88,8 +88,8 @@ void Win::calc()
         if (!str.isEmpty())
         {
             QMessageBox msgBox(QMessageBox::Warning,
-                               codec->toUnicode("Возведение в квадрат."),
-                               codec->toUnicode("Введено неверное значение."),
+                               ("Возведение в квадрат."),
+                               ("Введено неверное значение."),
                                QMessageBox::Ok);
         msgBox.exec();
     }

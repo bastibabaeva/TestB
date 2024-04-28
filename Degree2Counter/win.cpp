@@ -22,7 +22,7 @@ Win::Win(QWidget *parent):QWidget(parent)
     exitButton = new QPushButton("Выход", this);
     // компоновка приложения выполняется согласно рисунку 2
 
-    //if(outputLabel!=nullptr){
+   // if(outputLabel!=nullptr && outputEdit!=nullptr && nextButton!=nullptr && exitButton!=nullptr){
 
 
     QVBoxLayout *vLayout1 = new QVBoxLayout(frame);

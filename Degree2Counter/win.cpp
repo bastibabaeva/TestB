@@ -5,14 +5,12 @@
 
 Win::Win(QWidget *parent):QWidget(parent)
 {
-
     setWindowTitle("Возведение в квадрат");
     frame = new QFrame(this);
     frame->setFrameShadow(QFrame::Raised);
     frame->setFrameShape(QFrame::Panel);
     inputLabel = new QLabel("Введите число:", this);
     inputEdit = new QLineEdit("",this);
-    //inputEdit=nullptr;
 
     StrValidator *v=new StrValidator(inputEdit);
     inputEdit->setValidator(v);
@@ -21,9 +19,6 @@ Win::Win(QWidget *parent):QWidget(parent)
     nextButton = new QPushButton("Следующее", this);
     exitButton = new QPushButton("Выход", this);
     // компоновка приложения выполняется согласно рисунку 2
-
-   // if(outputLabel!=nullptr && outputEdit!=nullptr && nextButton!=nullptr && exitButton!=nullptr){
-
 
     QVBoxLayout *vLayout1 = new QVBoxLayout(frame);
     vLayout1->addWidget(inputLabel);
@@ -45,7 +40,7 @@ Win::Win(QWidget *parent):QWidget(parent)
     connect(exitButton,SIGNAL(clicked(bool)), this,SLOT(close()));
     connect(nextButton,SIGNAL(clicked(bool)), this,SLOT(begin()));
     connect(inputEdit,SIGNAL(returnPressed()), this,SLOT(calc()));
-    //}
+
 }
 void Win::begin()
 {
@@ -66,15 +61,7 @@ void Win::calc()
     a=str.toDouble(&Ok);
     if (Ok)
     {
-        r=a*a;
-        if (!qIsFinite(r)){
-            QMessageBox msgBox(QMessageBox::Warning,
-                               ("Возведение в квадрат."),
-                               ("Введено неверное значение."),
-                               QMessageBox::Ok);
-            msgBox.exec();
-            inputEdit->clear();
-        }
+        r=a*a;        
         str.setNum(r);
         outputEdit->setText(str);
         inputEdit->setEnabled(false);

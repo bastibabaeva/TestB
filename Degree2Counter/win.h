@@ -32,7 +32,6 @@ public:
     StrValidator(QObject *parent):QValidator(parent){}
     virtual State validate(QString &str,int &pos)const
     {
-        qDebug()<<str<<endl;//вывод сообщения для отладки
         return Acceptable; // метод всегда принимает вводимую строку
     }
 };

@@ -12,8 +12,8 @@ Win::Win(QWidget *parent):QWidget(parent)
     inputLabel = new QLabel("Введите число:", this);
     inputEdit = new QLineEdit("",this);
 
-    StrValidator *v=new StrValidator(inputEdit);
-    inputEdit->setValidator(v);
+   // StrValidator *v=new StrValidator(inputEdit);
+    //inputEdit->setValidator(v);
     outputLabel = new QLabel("Результат:", this);
     outputEdit = new QLineEdit("",this);
     nextButton = new QPushButton("Следующее", this);
@@ -74,7 +74,7 @@ void Win::calc()
     else
         if (!str.isEmpty())
         {
-            QMessageBox msgBox(QMessageBox::Warning,
+            QMessageBox msgBox(QMessageBox::Information,
                                ("Возведение в квадрат."),
                                ("Введено неверное значение."),
                                QMessageBox::Ok);

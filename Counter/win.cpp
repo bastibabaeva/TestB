@@ -4,14 +4,14 @@
 Win::Win(QWidget *parent):QWidget(parent)
 {
     codec = QTextCodec::codecForName("UTF-8");
-    this->setWindowTitle(codec->toUnicode("Счетчик"));
+    this->setWindowTitle(("Счетчик"));
 
-    label1 = new QLabel(codec->toUnicode("Cчет по 1"),this);
-    label2 = new QLabel(codec->toUnicode("Cчет по 5"),this);
+    label1 = new QLabel(("Cчет по 1"),this);
+    label2 = new QLabel(("Cчет по 5"),this);
     edit1 = new Counter("0",this);
     edit2 = new Counter("0",this);
     calcbutton=new QPushButton("+1",this);
-    exitbutton=new QPushButton(codec->toUnicode("Выход"),this);
+    exitbutton=new QPushButton(("Выход"),this);
 
     QHBoxLayout *layout1 = new QHBoxLayout();
     layout1->addWidget(label1);

@@ -22,6 +22,8 @@ public slots:
         r++;
         str.setNum(r);
         setText(str);
+
+
     }
 };
 class Win: public QWidget

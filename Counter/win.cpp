@@ -13,6 +13,8 @@ Win::Win(QWidget *parent):QWidget(parent)
     calcbutton=new QPushButton("+1",this);
     exitbutton= new QPushButton("Выход",this);
 
+    edit1->setReadOnly(true);
+    edit2->setReadOnly(true);
 
     QHBoxLayout *layout1 = new QHBoxLayout();
     layout1->addWidget(label1);

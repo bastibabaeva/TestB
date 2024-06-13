@@ -4,13 +4,13 @@
 #include <QPushButton>
 #include "area.h"
 
-class Windiw: public QWidget
+class Window: public QWidget
 {
 protected:
     QTextCodec *codec;
     Area *area; // область отображения рисунка
     QPushButton *btn;
 public: Window();
-}
+};
 
 #endif // WINDIW_H

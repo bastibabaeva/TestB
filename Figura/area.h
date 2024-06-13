@@ -1,6 +1,7 @@
 #ifndef AREA_H
 #define AREA_H
 #include "figura.h"
+#include <QWidget>
 
 class Area: public QWidget
 {
@@ -15,6 +16,6 @@ protected:
     void paintEvent(QPaintEvent *evevnt);
     void timerEvent(QTimerEvent *event);
     void showEvent(QShowEvent *event);
-    void QHideEvent(QHideEvent *event);
+    void hideEvent(QHideEvent *event);
 };
 #endif // AREA_H

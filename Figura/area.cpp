@@ -1,36 +1,38 @@
 #include "area.h"
+#include <QWidget>
 
 Area::Area(QWidget *parent):QWidget(parent)
 {
     setFixedSize(QSize(300,200));
-    myline=new MyLine(80,50,100);
+    myline=new MyLine(80,100,50);
     myrect=new MyRect(220,100,50);
     alpha=0;
 }
-void Area::showEvent(QShowEvent*)
+void Area::showEvent(QShowEvent *)
 {
     myTimer=startTimer(50); // создать таймер
 }
-void Area::paintEvent(QPainterEvent*)
+void Area::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
     painter.setPen(Qt::red);
-    myline->move(alpha, &painter);
+    myline->move(alpha,&painter);
     myrect->move(alpha*(-0.5),&painter);
 }
 void Area::timerEvent(QTimerEvent *event)
 {
-    if (event->timerId()==myTimer) // если наш таймер
+    if (event->timerId() == myTimer) // если наш таймер
     {
         alpha=alpha+0.2;
-        update();                   // обновить внешний вид
+        update(); // обновить внешний вид
     }
     else
-        QWidget::timerEvent(event); // иначе передать для стандартной обработки
+        QWidget::timerEvent(event); // иначе передать для стандартной
+    // обработки
 }
-void Area::QHideEvent(QHideEvent*)
+void Area::hideEvent(QHideEvent *)
 {
-    killertimer(myTimer); // уничтожить таймер
+    killTimer(myTimer); // уничтожить таймер
 }
 Area::~Area()
 {

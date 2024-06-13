@@ -1,13 +1,12 @@
 #include "windiw.h"
-#include <QTextCodec>
 #include <QVBoxLayout>
 
 Window::Window()
 {
-    codec=QTextCodec::codecForName("UTF-8");
-    this->setWindowTitle(codec->toUnicode("Обработка событий"));
+
+    this->setWindowTitle("Обработка событий");
     area = new Area(this);
-    btn=new QPushButton(codec->toUnicode("Завершить"),this );
+    btn=new QPushButton("Завершить",this);
     QVBoxLayout *layout= new QVBoxLayout(this);
     layout->addWidget(area);
     layout->addWidget(btn);

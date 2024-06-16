@@ -5,17 +5,18 @@
 
 class Area: public QWidget
 {
-    int myTimer;
-    float alpha;
+    int myTimer; //индетификатор таймера
+    float alpha; //угол поворота
 public:
     Area(QWidget *parent=0);
     ~Area();
     MyLine *myline;
     MyRect *myrect;
 protected:
-    void paintEvent(QPaintEvent *evevnt);
-    void timerEvent(QTimerEvent *event);
-    void showEvent(QShowEvent *event);
-    void hideEvent(QHideEvent *event);
+    //обработчики событий
+    void paintEvent(QPaintEvent *event); //метод, который вызовется при перерисовки виджета
+    void timerEvent(QTimerEvent *event); //метод, который вызовется при срабатывания таймера
+    void showEvent(QShowEvent *event); //метод, который вызовется при показе виджета
+    void hideEvent(QHideEvent *event); //метод, который вызовется при скрытии виджета
 };
 #endif // AREA_H

@@ -12,8 +12,7 @@ public:
     ~Area();
     MyLine *myline;
     MyRect *myrect;
-protected:
-    //обработчики событий
+protected:    
     void paintEvent(QPaintEvent *event); //метод, который вызовется при перерисовки виджета
     void timerEvent(QTimerEvent *event); //метод, который вызовется при срабатывания таймера
     void showEvent(QShowEvent *event); //метод, который вызовется при показе виджета

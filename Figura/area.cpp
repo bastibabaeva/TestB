@@ -10,7 +10,7 @@ Area::Area(QWidget *parent):QWidget(parent)
 }
 void Area::showEvent(QShowEvent *) //Определение функции showEvent, которая вызывается при отображении виджета
 {
-    myTimer=startTimer(50); // создать таймер
+    myTimer=startTimer(50); // создаем таймер с интерввалом 50 миллисекунд и сохраняем его в интетификатор таймера, скорость вращения фигур
 }
 void Area::paintEvent(QPaintEvent *) //при переисовке виджета
 {
@@ -36,6 +36,6 @@ void Area::hideEvent(QHideEvent *) //при скрытии виджета
 }
 Area::~Area()
 {
-    delete myline;
+    delete myline;//освобождаем память
     delete myrect;
 }
